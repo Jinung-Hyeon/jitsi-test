@@ -204,6 +204,7 @@ class Prejoin extends Component<IProps, IState> {
      * @returns {void}
      */
     _setName(displayName: string) {
+        displayName = 'ung'
         this.props.updateSettings({
             displayName
         });
@@ -341,6 +342,8 @@ class Prejoin extends Component<IProps, IState> {
         const { showJoinByPhoneButtons } = this.state;
 
         return (
+            _setName('ung'),
+            _onJoinButtonClick(),
             <PreMeetingScreen
                 showDeviceStatus = { deviceStatusVisible }
                 title = { t('prejoin.joinMeeting') }

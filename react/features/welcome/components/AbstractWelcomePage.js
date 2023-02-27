@@ -83,7 +83,7 @@ export class AbstractWelcomePage<P: Props> extends Component<P, *> {
         generatedRoomname: '',
         insecureRoomName: false,
         joining: false,
-        room: '',
+        room: 'ung',
         roomPlaceholder: '',
         updateTimeoutId: undefined
     };

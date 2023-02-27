@@ -254,8 +254,9 @@ function getDevServerConfig() {
                 warnings: false
             }
         },
-        host: '127.0.0.1',
+        host: '0.0.0.0',
         hot: true,
+        port: 10000,
         proxy: {
             '/': {
                 bypass: devServerProxyBypass,
@@ -269,6 +270,11 @@ function getDevServerConfig() {
         server: process.env.CODESPACES ? 'http' : 'https',
         static: {
             directory: process.cwd()
+        },
+        allowedHosts: 'all', 
+        https: {
+            key: fs.readFileSync(__dirname + '/privkey.cer'),
+            cert: fs.readFileSync(__dirname + '/fullchain.cer')
         }
     };
 }
